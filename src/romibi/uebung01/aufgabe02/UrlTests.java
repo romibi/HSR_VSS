@@ -1,5 +1,10 @@
 package romibi.uebung01.aufgabe02;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -20,6 +25,11 @@ public class UrlTests {
 			printInfos(c);
 			printInfos(d);
 			
+			printContent(a);
+			printContent(b);
+			printContent(c);
+			printContent(d);
+			
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}	
@@ -34,6 +44,23 @@ public class UrlTests {
 		System.out.println("FILE:	"+url.getFile());
 		System.out.println("REF:	"+url.getRef());
 		System.out.println("-----");
+	}
+	
+	public static void printContent(URL url) {
+		System.out.println("=====================================");
+		System.out.println("URL: "+url.toString());
+		System.out.println("===");
+		try {
+			InputStream stream = url.openStream();
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(stream));
+			String string = "";
+			while ((string = bufferedReader.readLine())!=null) {
+				System.out.println(string);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		System.out.println("=====================================");
 	}
 	
 }
