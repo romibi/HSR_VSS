@@ -1,4 +1,4 @@
-package romibi.uebung02.aufgabe02;
+package romibi.uebung02.aufgabe01.d;
 
 import java.io.IOException;
 import java.io.PrintWriter;
