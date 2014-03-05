@@ -10,6 +10,7 @@
 .project
 .settings/
 /bin
+/lib
 .DS_Store
 
 lib/*
