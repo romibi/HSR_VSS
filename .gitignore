@@ -11,3 +11,5 @@
 .settings/
 /bin
 .DS_Store
+
+lib/*
